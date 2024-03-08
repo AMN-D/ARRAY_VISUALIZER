@@ -1,0 +1,401 @@
+Product ID,Cost of Production ($),Competition Level (1-5),Target Audience,Market Conditions,Desired Profit Margin (%)
+1,12700,4,Teenagers,Stable,23
+2,8600,2,Professionals,Growing,27
+3,15400,3,Seniors,Competitive,20
+4,9800,4,Young Adults,Stable,25
+5,18700,5,Millennials,Declining,18
+6,11200,3,Families,Growing,22
+7,13500,4,Professionals,Stable,26
+8,9200,2,Teenagers,Competitive,19
+9,14300,3,Young Adults,Declining,24
+10,9750,4,Millennials,Growing,21
+11,12100,2,Families,Stable,28
+12,8400,3,Seniors,Competitive,17
+13,16000,4,Professionals,Declining,29
+14,10300,5,Teenagers,Growing,16
+15,17500,3,Young Adults,Stable,30
+16,11500,2,Millennials,Competitive,23
+17,13200,4,Families,Declining,20
+18,8900,3,Seniors,Growing,25
+19,14700,5,Professionals,Stable,22
+20,9200,4,Teenagers,Competitive,18
+21,12900,3,Young Adults,Declining,26
+22,9500,2,Millennials,Growing,21
+23,14300,4,Families,Stable,29
+24,10800,5,Seniors,Competitive,16
+25,18000,3,Professionals,Declining,27
+26,10200,4,Teenagers,Growing,24
+27,16700,2,Young Adults,Stable,19
+28,12200,3,Millennials,Competitive,30
+29,13700,4,Families,Declining,17
+30,8700,5,Seniors,Growing,22
+31,15500,3,Professionals,Stable,25
+32,9850,2,Teenagers,Competitive,20
+33,14100,4,Young Adults,Declining,28
+34,9600,3,Millennials,Growing,15
+35,14500,5,Families,Stable,31
+36,11000,4,Seniors,Competitive,18
+37,17400,3,Professionals,Declining,23
+38,10700,2,Teenagers,Growing,16
+39,18200,4,Young Adults,Stable,28
+40,12000,3,Millennials,Competitive,20
+41,13400,5,Families,Declining,25
+42,9000,3,Seniors,Growing,18
+43,15000,4,Professionals,Stable,22
+44,10100,2,Teenagers,Competitive,27
+45,12600,3,Young Adults,Declining,21
+46,8600,4,Millennials,Growing,29
+47,14800,5,Families,Stable,16
+48,9400,3,Seniors,Competitive,31
+49,16100,4,Professionals,Declining,19
+50,10500,5,Teenagers,Growing,24
+51,17200,3,Young Adults,Stable,17
+52,11200,2,Millennials,Competitive,23
+53,13300,4,Families,Declining,28
+54,8800,3,Seniors,Growing,20
+55,15700,5,Professionals,Stable,25
+56,9800,4,Teenagers,Competitive,18
+57,13000,3,Young Adults,Declining,26
+58,9300,2,Millennials,Growing,21
+59,14100,4,Families,Stable,29
+60,10200,5,Seniors,Competitive,16
+61,16500,3,Professionals,Declining,22
+62,10400,4,Teenagers,Growing,27
+63,13800,3,Young Adults,Stable,20
+64,8200,2,Millennials,Competitive,31
+65,14700,4,Families,Declining,18
+66,9000,3,Seniors,Growing,26
+67,15100,5,Professionals,Stable,19
+68,10700,4,Teenagers,Competitive,24
+69,12300,3,Young Adults,Declining,17
+70,8500,2,Millennials,Growing,22
+71,15900,4,Families,Stable,27
+72,11000,5,Seniors,Competitive,21
+73,17000,3,Professionals,Declining,28
+74,10800,4,Teenagers,Growing,19
+75,14200,3,Young Adults,Stable,30
+76,9100,2,Millennials,Competitive,25
+77,12800,4,Families,Declining,16
+78,8700,5,Seniors,Growing,21
+79,15300,3,Professionals,Stable,26
+80,10000,4,Teenagers,Competitive,19
+81,13400,3,Young Adults,Declining,24
+82,9400,2,Millennials,Growing,20
+83,14000,4,Families,Stable,29
+84,10500,5,Seniors,Competitive,15
+85,16700,3,Professionals,Declining,30
+86,10600,4,Teenagers,Growing,21
+87,13600,3,Young Adults,Stable,26
+88,8900,2,Millennials,Competitive,17
+89,14500,4,Families,Declining,22
+90,9300,5,Seniors,Growing,27
+91,15800,3,Professionals,Stable,19
+92,10900,4,Teenagers,Competitive,24
+93,12400,3,Young Adults,Declining,16
+94,8300,2,Millennials,Growing,21
+95,14900,4,Families,Stable,28
+96,9200,5,Seniors,Competitive,15
+97,16300,3,Professionals,Declining,30
+98,11200,4,Teenagers,Growing,19
+99,14300,3,Young Adults,Stable,25
+100,9900,2,Millennials,Competitive,20
+101,13100,4,Families,Declining,27
+102,9000,5,Seniors,Growing,18
+103,15600,3,Professionals,Stable,22
+104,10100,4,Teenagers,Competitive,29
+105,12500,3,Young Adults,Declining,20
+106,8600,2,Millennials,Growing,25
+107,14400,4,Families,Stable,16
+108,10300,5,Seniors,Competitive,31
+109,16800,3,Professionals,Declining,17
+110,10700,4,Teenagers,Growing,22
+111,13700,3,Young Adults,Stable,27
+112,9500,2,Millennials,Competitive,19
+113,13900,4,Families,Declining,24
+114,9200,5,Seniors,Growing,16
+115,16200,3,Professionals,Stable,29
+116,11400,4,Teenagers,Competitive,18
+117,14700,3,Young Adults,Declining,25
+118,8600,2,Millennials,Growing,21
+119,15200,4,Families,Stable,30
+120,9800,5,Seniors,Competitive,20
+121,17000,3,Professionals,Declining,26
+122,11000,4,Teenagers,Growing,15
+123,13800,3,Young Adults,Stable,19
+124,8500,2,Millennials,Competitive,23
+125,14300,4,Families,Declining,28
+126,9000,5,Seniors,Growing,17
+127,15700,3,Professionals,Stable,22
+128,10200,4,Teenagers,Competitive,29
+129,12600,3,Young Adults,Declining,18
+130,8600,2,Millennials,Growing,24
+131,14900,4,Families,Stable,16
+132,10300,5,Seniors,Competitive,31
+133,16800,3,Professionals,Declining,17
+134,10700,4,Teenagers,Growing,22
+135,13700,3,Young Adults,Stable,27
+136,9500,2,Millennials,Competitive,19
+137,13900,4,Families,Declining,24
+138,9200,5,Seniors,Growing,16
+139,16200,3,Professionals,Stable,29
+140,11400,4,Teenagers,Competitive,18
+141,14700,3,Young Adults,Declining,25
+142,8600,2,Millennials,Growing,21
+143,15200,4,Families,Stable,30
+144,9800,5,Seniors,Competitive,20
+145,17000,3,Professionals,Declining,26
+146,11000,4,Teenagers,Growing,15
+147,13800,3,Young Adults,Stable,19
+148,8500,2,Millennials,Competitive,23
+149,14300,4,Families,Declining,28
+150,9000,5,Seniors,Growing,17
+151,15700,3,Professionals,Stable,22
+152,10200,4,Teenagers,Competitive,29
+153,12600,3,Young Adults,Declining,18
+154,8600,2,Millennials,Growing,24
+155,14900,4,Families,Stable,16
+156,10300,5,Seniors,Competitive,31
+157,16800,3,Professionals,Declining,17
+158,10700,4,Teenagers,Growing,22
+159,13700,3,Young Adults,Stable,27
+160,9500,2,Millennials,Competitive,19
+161,13900,4,Families,Declining,24
+162,9200,5,Seniors,Growing,16
+163,16200,3,Professionals,Stable,29
+164,11400,4,Teenagers,Competitive,18
+165,14700,3,Young Adults,Declining,25
+166,8600,2,Millennials,Growing,21
+167,15200,4,Families,Stable,30
+168,9800,5,Seniors,Competitive,20
+169,17000,3,Professionals,Declining,26
+170,11000,4,Teenagers,Growing,15
+171,13800,3,Young Adults,Stable,19
+172,8500,2,Millennials,Competitive,23
+173,14300,4,Families,Declining,28
+174,9000,5,Seniors,Growing,17
+175,15700,3,Professionals,Stable,22
+176,10200,4,Teenagers,Competitive,29
+177,12600,3,Young Adults,Declining,18
+178,8600,2,Millennials,Growing,24
+179,14900,4,Families,Stable,16
+180,10300,5,Seniors,Competitive,31
+181,16800,3,Professionals,Declining,17
+182,10700,4,Teenagers,Growing,22
+183,13700,3,Young Adults,Stable,27
+184,9500,2,Millennials,Competitive,19
+185,13900,4,Families,Declining,24
+186,9200,5,Seniors,Growing,16
+187,16200,3,Professionals,Stable,29
+188,11400,4,Teenagers,Competitive,18
+189,14700,3,Young Adults,Declining,25
+190,8600,2,Millennials,Growing,21
+191,15200,4,Families,Stable,30
+192,9800,5,Seniors,Competitive,20
+193,17000,3,Professionals,Declining,26
+194,11000,4,Teenagers,Growing,15
+195,13800,3,Young Adults,Stable,19
+196,8500,2,Millennials,Competitive,23
+197,14300,4,Families,Declining,28
+198,9000,5,Seniors,Growing,17
+199,15700,3,Professionals,Stable,22
+200,10200,4,Teenagers,Competitive,29
+201,12600,3,Young Adults,Declining,18
+202,8600,2,Millennials,Growing,24
+203,14900,4,Families,Stable,16
+204,10300,5,Seniors,Competitive,31
+205,16800,3,Professionals,Declining,17
+206,10700,4,Teenagers,Growing,22
+207,13700,3,Young Adults,Stable,27
+208,9500,2,Millennials,Competitive,19
+209,13900,4,Families,Declining,24
+210,9200,5,Seniors,Growing,16
+211,16200,3,Professionals,Stable,29
+212,11400,4,Teenagers,Competitive,18
+213,14700,3,Young Adults,Declining,25
+214,8600,2,Millennials,Growing,21
+215,15200,4,Families,Stable,30
+216,9800,5,Seniors,Competitive,20
+217,17000,3,Professionals,Declining,26
+218,11000,4,Teenagers,Growing,15
+219,13800,3,Young Adults,Stable,19
+220,8500,2,Millennials,Competitive,23
+221,14300,4,Families,Declining,28
+222,9000,5,Seniors,Growing,17
+223,15700,3,Professionals,Stable,22
+224,10200,4,Teenagers,Competitive,29
+225,12600,3,Young Adults,Declining,18
+226,8600,2,Millennials,Growing,24
+227,14900,4,Families,Stable,16
+228,10300,5,Seniors,Competitive,31
+229,16800,3,Professionals,Declining,17
+230,10700,4,Teenagers,Growing,22
+231,13700,3,Young Adults,Stable,27
+232,9500,2,Millennials,Competitive,19
+233,13900,4,Families,Declining,24
+234,9200,5,Seniors,Growing,16
+235,16200,3,Professionals,Stable,29
+236,11400,4,Teenagers,Competitive,18
+237,14700,3,Young Adults,Declining,25
+238,8600,2,Millennials,Growing,21
+239,15200,4,Families,Stable,30
+240,9800,5,Seniors,Competitive,20
+241,17000,3,Professionals,Declining,26
+242,11000,4,Teenagers,Growing,15
+243,13800,3,Young Adults,Stable,19
+244,8500,2,Millennials,Competitive,23
+245,14300,4,Families,Declining,28
+246,9000,5,Seniors,Growing,17
+247,15700,3,Professionals,Stable,22
+248,10200,4,Teenagers,Competitive,29
+249,12600,3,Young Adults,Declining,18
+250,8600,2,Millennials,Growing,24
+251,14900,4,Families,Stable,16
+252,10300,5,Seniors,Competitive,31
+253,16800,3,Professionals,Declining,17
+254,10700,4,Teenagers,Growing,22
+255,13700,3,Young Adults,Stable,27
+256,9500,2,Millennials,Competitive,19
+257,13900,4,Families,Declining,24
+258,9200,5,Seniors,Growing,16
+259,16200,3,Professionals,Stable,29
+260,11400,4,Teenagers,Competitive,18
+261,14700,3,Young Adults,Declining,25
+262,8600,2,Millennials,Growing,21
+263,15200,4,Families,Stable,30
+264,9800,5,Seniors,Competitive,20
+265,17000,3,Professionals,Declining,26
+266,11000,4,Teenagers,Growing,15
+267,13800,3,Young Adults,Stable,19
+268,8500,2,Millennials,Competitive,23
+269,14300,4,Families,Declining,28
+270,9000,5,Seniors,Growing,17
+271,15700,3,Professionals,Stable,22
+272,10200,4,Teenagers,Competitive,29
+273,12600,3,Young Adults,Declining,18
+274,8600,2,Millennials,Growing,24
+275,14900,4,Families,Stable,16
+276,10300,5,Seniors,Competitive,31
+277,16800,3,Professionals,Declining,17
+278,10700,4,Teenagers,Growing,22
+279,13700,3,Young Adults,Stable,27
+280,9500,2,Millennials,Competitive,19
+281,13900,4,Families,Declining,24
+282,9200,5,Seniors,Growing,16
+283,16200,3,Professionals,Stable,29
+284,11400,4,Teenagers,Competitive,18
+285,14700,3,Young Adults,Declining,25
+286,8600,2,Millennials,Growing,21
+287,15200,4,Families,Stable,30
+288,9800,5,Seniors,Competitive,20
+289,17000,3,Professionals,Declining,26
+290,11000,4,Teenagers,Growing,15
+291,13800,3,Young Adults,Stable,19
+292,8500,2,Millennials,Competitive,23
+293,14300,4,Families,Declining,28
+294,9000,5,Seniors,Growing,17
+295,15700,3,Professionals,Stable,22
+296,10200,4,Teenagers,Competitive,29
+297,12600,3,Young Adults,Declining,18
+298,8600,2,Millennials,Growing,24
+299,14900,4,Families,Stable,16
+300,10300,5,Seniors,Competitive,31
+301,16800,3,Professionals,Declining,17
+302,10700,4,Teenagers,Growing,22
+303,13700,3,Young Adults,Stable,27
+304,9500,2,Millennials,Competitive,19
+305,13900,4,Families,Declining,24
+306,9200,5,Seniors,Growing,16
+307,16200,3,Professionals,Stable,29
+308,11400,4,Teenagers,Competitive,18
+309,14700,3,Young Adults,Declining,25
+310,8600,2,Millennials,Growing,21
+311,15200,4,Families,Stable,30
+312,9800,5,Seniors,Competitive,20
+313,17000,3,Professionals,Declining,26
+314,11000,4,Teenagers,Growing,15
+315,13800,3,Young Adults,Stable,19
+316,8500,2,Millennials,Competitive,23
+317,14300,4,Families,Declining,28
+318,9000,5,Seniors,Growing,17
+319,15700,3,Professionals,Stable,22
+320,10200,4,Teenagers,Competitive,29
+321,12600,3,Young Adults,Declining,18
+322,8600,2,Millennials,Growing,24
+323,14900,4,Families,Stable,16
+324,10300,5,Seniors,Competitive,31
+325,16800,3,Professionals,Declining,17
+326,10700,4,Teenagers,Growing,22
+327,13700,3,Young Adults,Stable,27
+328,9500,2,Millennials,Competitive,19
+329,13900,4,Families,Declining,24
+330,9200,5,Seniors,Growing,16
+331,16200,3,Professionals,Stable,29
+332,11400,4,Teenagers,Competitive,18
+333,14700,3,Young Adults,Declining,25
+334,8600,2,Millennials,Growing,21
+335,15200,4,Families,Stable,30
+336,9800,5,Seniors,Competitive,20
+337,17000,3,Professionals,Declining,26
+338,11000,4,Teenagers,Growing,15
+339,13800,3,Young Adults,Stable,19
+340,8500,2,Millennials,Competitive,23
+341,14300,4,Families,Declining,28
+342,9000,5,Seniors,Growing,17
+343,15700,3,Professionals,Stable,22
+344,10200,4,Teenagers,Competitive,29
+345,12600,3,Young Adults,Declining,18
+346,8600,2,Millennials,Growing,24
+347,14900,4,Families,Stable,16
+348,10300,5,Seniors,Competitive,31
+349,16800,3,Professionals,Declining,17
+350,10700,4,Teenagers,Growing,22
+351,13700,3,Young Adults,Stable,27
+352,9500,2,Millennials,Competitive,19
+353,13900,4,Families,Declining,24
+354,9200,5,Seniors,Growing,16
+355,16200,3,Professionals,Stable,29
+356,11400,4,Teenagers,Competitive,18
+357,14700,3,Young Adults,Declining,25
+358,8600,2,Millennials,Growing,21
+359,15200,4,Families,Stable,30
+360,9800,5,Seniors,Competitive,20
+361,17000,3,Professionals,Declining,26
+362,11000,4,Teenagers,Growing,15
+363,13800,3,Young Adults,Stable,19
+364,8500,2,Millennials,Competitive,23
+365,14300,4,Families,Declining,28
+366,9000,5,Seniors,Growing,17
+367,15700,3,Professionals,Stable,22
+368,10200,4,Teenagers,Competitive,29
+369,12600,3,Young Adults,Declining,18
+370,8600,2,Millennials,Growing,24
+371,14900,4,Families,Stable,16
+372,10300,5,Seniors,Competitive,31
+373,16800,3,Professionals,Declining,17
+374,10700,4,Teenagers,Growing,22
+375,13700,3,Young Adults,Stable,27
+376,9500,2,Millennials,Competitive,19
+377,13900,4,Families,Declining,24
+378,9200,5,Seniors,Growing,16
+379,16200,3,Professionals,Stable,29
+380,11400,4,Teenagers,Competitive,18
+381,14700,3,Young Adults,Declining,25
+382,8600,2,Millennials,Growing,21
+383,15200,4,Families,Stable,30
+384,9800,5,Seniors,Competitive,20
+385,17000,3,Professionals,Declining,26
+386,11000,4,Teenagers,Growing,15
+387,13800,3,Young Adults,Stable,19
+388,8500,2,Millennials,Competitive,23
+389,14300,4,Families,Declining,28
+390,9000,5,Seniors,Growing,17
+391,15700,3,Professionals,Stable,22
+392,10200,4,Teenagers,Competitive,29
+393,12600,3,Young Adults,Declining,18
+394,8600,2,Millennials,Growing,24
+395,14900,4,Families,Stable,16
+396,10300,5,Seniors,Competitive,31
+397,16800,3,Professionals,Declining,17
+398,10700,4,Teenagers,Growing,22
+399,13700,3,Young Adults,Stable,27
+400,9500,2,Millennials,Competitive,19
