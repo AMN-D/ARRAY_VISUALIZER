@@ -1,32 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function MyButton() {
-  return (
-    <button className="butt">I'm a button</button>
-  );
+function Square() {
+  
+  const [value, setValue] = useState(null);
+
+  function handleClick() {
+    setValue('X');
+  }
+
+  return <button className="square" onClick={handleClick} >{value}</button>
+
 }
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        <MyButton />
-        </a>
-      </header>
+  <>
+    <div className='board-row'>
+      <Square />
+      <Square />
+      <Square />
     </div>
+    <div className='board-row'>
+      <Square />
+      <Square />
+      <Square />
+    </div>
+    <div className='board-row'>
+      <Square />
+      <Square />
+      <Square />
+    </div>
+  </>
   );
 }
-
-export default App;
