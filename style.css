@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #121212;
+  max-width: 100%;
+  color: #e2e2e2;
+  padding: 1rem 4rem;
+}
+
+.logo {
+  width: 25%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.logo h1 {
+  font-family: "Damion", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  transform: rotate(-7deg);
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-animation: ease;
+  transition-delay: 0;
+}
+.logo h1:hover {
+  color: #FE347E;
+}
+
+.header-link {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.header-link ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+@media screen and (max-width: 600px) {
+  .header-link ul {
+    display: none;
+  }
+}
+.header-link ul li {
+  display: inline-block;
+  padding: 0.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-animation: ease;
+  transition-delay: 0;
+}
+.header-link ul li:hover {
+  color: #FE347E;
+}
+
+.Github {
+  width: 15%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.Github a {
+  text-decoration: none;
+}
+.Github svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+@media screen and (max-width: 600px) {
+  .Github {
+    width: 30%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

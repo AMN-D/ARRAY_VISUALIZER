@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$main : #000;
+$font : #e2e2e2;
+$secondary : #121212;
+$neonpink : #FE347E;
+
+$small : 600px;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: $main;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $secondary;
+    max-width: 100%;
+    color: $font;
+    padding: 1rem 4rem;
+}
+
+.logo {
+    width: 25%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    h1 {
+        font-family: "Damion", cursive;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+        transform: rotate(-7deg);
+        cursor: pointer;
+        transition: {
+            property: color;
+            duration: 0.3s;
+            animation: ease;
+            delay: 0;
+        }
+        &:hover {
+            color: $neonpink;
+        }
+    }
+}
+
+.header-link {
+    width: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        @media screen and (max-width: $small) {
+                display: none;
+        }
+        li {
+            display: inline-block;
+            padding: .5rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: {
+                property: color;
+                duration: 0.3s;
+                animation: ease;
+                delay: 0;
+            }
+            &:hover {
+                color: $neonpink;
+            }
+        }
+    }
+}
+
+.Github {
+    width: 15%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    a {
+        text-decoration: none;
+    }
+    svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    @media screen and (max-width: $small) {
+        width: 30%;
+    }
+}
