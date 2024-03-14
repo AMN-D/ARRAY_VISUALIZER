@@ -21,13 +21,13 @@ header {
   padding: 1rem 4rem;
 }
 
-.logo {
-  width: 25%;
+.logo, footer div.main div.main-logo {
+  width: 30%;
   display: flex;
   justify-content: start;
   align-items: center;
 }
-.logo h1 {
+.logo h1, footer div.main div.main-logo h1 {
   font-family: "Damion", cursive;
   font-weight: 200;
   font-style: normal;
@@ -41,12 +41,12 @@ header {
   transition-animation: ease;
   transition-delay: 0;
 }
-.logo h1:hover {
+.logo h1:hover, footer div.main div.main-logo h1:hover {
   color: #FE347E;
 }
 
 .header-link {
-  width: 60%;
+  width: 55%;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -63,14 +63,15 @@ header {
   }
 }
 .header-link ul li {
-  display: inline-block;
-  padding: 0.5rem;
-  font-weight: 300;
-  cursor: pointer;
   transition-property: color;
   transition-duration: 0.3s;
   transition-animation: ease;
   transition-delay: 0;
+  display: inline-block;
+  padding: 0.4rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 .header-link ul li:hover {
   color: #FE347E;
@@ -93,6 +94,79 @@ header {
   .Github {
     width: 30%;
   }
+}
+
+footer {
+  padding: 1.5rem 0;
+  max-width: 100%;
+  border-top: 2px solid #121212;
+  border-bottom: 2px solid #121212;
+  display: flex;
+  justify-content: center;
+  color: #e2e2e2;
+}
+footer div.main {
+  width: 90%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer div.main div.main-logo {
+  min-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: start;
+  width: 30%;
+}
+footer div.main div.main-logo p {
+  padding: 0.5rem;
+  word-wrap: break-word;
+  text-align: justify;
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+footer div.main div.main-logo p span {
+  font-weight: 200;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-animation: ease;
+  transition-delay: 0;
+}
+footer div.main div.main-logo p span:hover {
+  color: #FE347E;
+}
+footer div.main div.main-contact {
+  height: 100%;
+  width: 70%;
+  text-align: right;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  flex-direction: column;
+}
+footer div.main div.main-contact h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: #FE347E;
+  padding: 0.5rem 0.5rem;
+  border-radius: 8px;
+  color: #000;
+}
+footer div.main div.main-contact a {
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-animation: ease;
+  transition-delay: 0;
+  font-weight: 200;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+footer div.main div.main-contact a:hover {
+  color: #FE347E;
 }
 
 /*# sourceMappingURL=style.css.map */
