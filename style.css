@@ -13,12 +13,23 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid #121212;
   max-width: 100%;
   color: #e2e2e2;
-  padding: 1rem 4rem;
+}
+header div.header-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+@media screen and (max-width: 600px) {
+  header div.header-container {
+    padding: 1rem 2rem;
+  }
 }
 
 .logo, footer div.main div.main-logo {
@@ -113,6 +124,11 @@ footer div.main {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 600px) {
+  footer div.main {
+    flex-direction: column;
+  }
+}
 footer div.main div.main-logo {
   min-height: 2rem;
   display: flex;
@@ -120,6 +136,11 @@ footer div.main div.main-logo {
   justify-items: center;
   align-items: start;
   width: 30%;
+}
+@media screen and (max-width: 600px) {
+  footer div.main div.main-logo {
+    width: 90%;
+  }
 }
 footer div.main div.main-logo p {
   padding: 0.5rem;
@@ -139,6 +160,11 @@ footer div.main div.main-logo p span {
 footer div.main div.main-logo p span:hover {
   color: #FE347E;
 }
+@media screen and (max-width: 600px) {
+  footer div.main div.main-logo p {
+    padding: 0;
+  }
+}
 footer div.main div.main-contact {
   height: 100%;
   width: 70%;
@@ -147,6 +173,13 @@ footer div.main div.main-contact {
   justify-content: start;
   align-items: end;
   flex-direction: column;
+}
+@media screen and (max-width: 600px) {
+  footer div.main div.main-contact {
+    align-items: start;
+    height: auto;
+    width: 90%;
+  }
 }
 footer div.main div.main-contact h1 {
   font-weight: 700;

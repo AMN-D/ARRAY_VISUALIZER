@@ -33,12 +33,21 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-bottom: 2px solid $secondary;
     max-width: 100%;
     color: $font;
-    padding: 1rem 4rem;
+    div.header-container {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        @media screen and (max-width: $small) {
+            padding: 1rem 2rem;
+        }
+    }
 }
 
 .logo {
@@ -115,6 +124,9 @@ footer {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        @media screen and (max-width: $small) {
+            flex-direction: column;         
+        }
         div.main-logo {
             @extend .logo;
             min-height: 2rem;
@@ -123,6 +135,9 @@ footer {
             justify-items: center;
             align-items: start;
             width: 30%;
+            @media screen and (max-width: $small) {
+                width: 90%;         
+            }
             p {
                 padding: 0.5rem;
                 word-wrap: break-word;
@@ -134,6 +149,9 @@ footer {
                     cursor: pointer;
                     @include smooth-transition;
                 }
+                @media screen and (max-width: $small) {
+                    padding: 0;         
+                }
             }
         }
         div.main-contact{
@@ -144,6 +162,11 @@ footer {
             justify-content: start;
             align-items: end;
             flex-direction: column;
+            @media screen and (max-width: $small) {
+                align-items: start;
+                height: auto;
+                width: 90%;         
+            }
             h1 {
                 font-weight: 700;
                 font-size: 1.5rem;
