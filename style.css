@@ -34,8 +34,8 @@ header div .logo a svg {
   padding-right: 0.3rem;
 }
 header div .logo a h1 {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 header div .link {
   justify-content: end;
