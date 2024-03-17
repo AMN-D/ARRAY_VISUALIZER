@@ -4,7 +4,8 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #f9f9f9;
+  background-color: snow;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,7 +13,13 @@ html, body {
 header {
   height: 2.5rem;
   overflow: hidden;
-  padding: 0.5rem 0;
+  width: 100%;
+  padding: 2rem 0;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    border-bottom: 1px solid #121212;
+  }
 }
 header div {
   display: flex;
@@ -20,7 +27,6 @@ header div {
   margin: auto;
   width: 90%;
   height: 100%;
-  font-family: "Poppins", sans-serif;
 }
 header div .logo a {
   display: flex;
@@ -33,6 +39,11 @@ header div .logo a svg {
   height: auto;
   padding-right: 0.3rem;
 }
+@media only screen and (max-width: 700px) {
+  header div .logo a svg {
+    width: 2rem;
+  }
+}
 header div .logo a h1 {
   font-size: 0.9rem;
   font-weight: 400;
@@ -43,25 +54,219 @@ header div .link {
 header div .link a {
   text-decoration: none;
   color: #121212;
-  transition: all 0.3s ease-in-out;
   font-size: 0.8rem;
 }
 header div .link .contact {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
   border: 1px solid #121212;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  margin: 0 1rem;
+  margin: 0 0.8rem;
   font-weight: 400;
 }
 header div .link .contact:hover {
   background-color: #121212;
-  color: #f9f9f9;
+  color: snow;
 }
 header div .link .document {
   font-weight: 300;
 }
 header div .link .document:hover {
   text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  header div .link .document {
+    font-size: 0.65rem;
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main .inner {
+  overflow: hidden;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.main .inner .link {
+  height: 15%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .inner .link a {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 0.8rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #121212;
+  margin: 0 0.5rem;
+}
+.main .inner .link a:hover {
+  background-color: #121212;
+  color: snow;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .link {
+    overflow: auto;
+    justify-content: start;
+  }
+}
+.main .inner .logo {
+  display: flex;
+  align-items: center;
+  height: 40%;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .logo {
+    align-items: start;
+    height: auto;
+  }
+}
+.main .inner .logo h1 {
+  font-weight: 900;
+  font-size: 21.5rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1rem;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .logo h1 {
+    font-size: 5rem;
+    letter-spacing: normal;
+  }
+}
+.main .inner .desc {
+  width: 100%;
+  height: 15%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .desc {
+    height: 10%;
+  }
+}
+.main .inner .desc p {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-decoration: underline #262626;
+  text-decoration-style: wavy;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .desc p {
+    text-align: center;
+    width: 20rem;
+  }
+}
+.main .inner .foot, .main .inner .foot .right, .main .inner .foot .left, .main .inner .foot .center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+  padding: 0;
+  justify-content: center;
+  align-items: end;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot, .main .inner .foot .right, .main .inner .foot .left, .main .inner .foot .center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+  }
+}
+.main .inner .foot .center {
+  padding: 0;
+  width: 40%;
+  height: 100%;
+}
+.main .inner .foot .center a {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 0.8rem;
+  font-weight: 400;
+  border: 1px solid #121212;
+  padding: 0.8rem 4rem;
+  margin: 0 0.8rem;
+  font-weight: 300;
+  background-color: #121212;
+  color: snow;
+  cursor: pointer;
+}
+.main .inner .foot .center a:hover {
+  background-color: #121212;
+  color: snow;
+}
+.main .inner .foot .center a:hover {
+  color: #121212;
+  background-color: snow;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot .center {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+}
+.main .inner .foot .left, .main .inner .foot .right {
+  transition: all 0.2s ease-in-out;
+  width: 30%;
+  height: 100%;
+  padding: 0;
+  justify-content: start;
+}
+.main .inner .foot .left a, .main .inner .foot .right a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.main .inner .foot .left a li::marker, .main .inner .foot .right a li::marker {
+  color: salmon;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot .left, .main .inner .foot .right {
+    display: none;
+  }
+}
+.main .inner .foot .right {
+  justify-content: end;
+}
+.main .inner .foot .right ul li {
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+.main .inner .foot .right ul li a {
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
