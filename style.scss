@@ -7,6 +7,7 @@ $secondary: salmon;
 $border: 1px solid $font;
 $font-style: "Poppins", sans-serif;
 $small: 700px;
+$dark: #000;
 
 @mixin vertically-center {
     display: flex;
@@ -19,7 +20,7 @@ $small: 700px;
 }
 
 @mixin smooth {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 @mixin button {
@@ -246,6 +247,96 @@ header {
                             font-weight: 400;
                         }
                     }        
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include vertically-center();
+    max-width: 100%;
+    height: 20%;
+    padding: 1rem;
+    overflow: hidden;
+    color: $main;
+    background-color: $dark;
+    @media only screen and (max-width: $small){
+        height: 5%;
+    }
+    .cover {
+        @include vertically-center();
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+        height: 100%;
+        .qrcode {
+            img {
+                width: 5rem;
+                @media only screen and (max-width: $small){
+                    width: 2rem;
+                }
+            }
+        }
+        .main {
+            @include vertically-center();
+            .left{
+                @include vertically-center();
+                flex-direction: column;
+                align-items: start;
+                padding: 1rem;
+                width: 50%;
+                p {
+                    padding: 0;
+                    padding-bottom: 0.5rem;
+                    margin: 0;
+                    width: 30%;
+                    line-height: 1;
+                    font-weight: 200;
+                    @media only screen and (max-width: $small){
+                        display: none;
+                        padding-bottom: 0;
+                    }
+                }
+                h6 {
+                    font-weight: 700;
+                    font-size: 1rem;
+                    padding: 0;
+                    margin: 0;
+                    @media only screen and (max-width: $small){
+                        font-size: 0.6rem;
+                        text-align: left;
+                    }
+                }
+            }
+            .right{
+                @extend .left;
+                align-items: end;
+                justify-content: right;
+                
+                a {
+                    @include no-decorations();
+                    color: $secondary;
+                    font-weight: 200;
+                    padding-bottom: 1rem;
+                    @include smooth();
+                    &:hover {
+                        color: $main;
+                    }
+                    @media only screen and (max-width: $small){
+                        padding-bottom: 0.1rem;
+                        font-size: 0.5rem;
+                    }
+                }
+                .block {
+                    @include smooth();
+                    padding: 0.6rem 1rem;
+                    border-radius: 0.2rem;
+                    background: linear-gradient(0deg, #FF671F 33.33%, #ffffff 33.33%, #ffffff 66.67%, #046A38 66.67%);
+                    cursor: pointer;
+                    @media only screen and (max-width: $small){
+                        display: none;
+                    }                 
                 }
             }
         }
