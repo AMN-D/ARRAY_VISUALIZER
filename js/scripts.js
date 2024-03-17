@@ -10,5 +10,14 @@ function updateLinkText() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        centeredSlides: false,
+        freeMode: true, 
+    });
+});
+
 updateLinkText();
 window.addEventListener('resize', updateLinkText);
