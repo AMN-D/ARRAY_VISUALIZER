@@ -11,13 +11,33 @@ function updateLinkText() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 20,
-        centeredSlides: false,
+        centeredSlides: true,
         freeMode: true, 
+        
+        on: {
+            slideChange: function () {
+                var slides = this.slides;
+                for (var i = 0; i<slides.length; i++) {
+                    slides[i].style.opacity = 1;
+                    slides[i].style.filter = 'none';
+
+                }
+                var activeIndex = this.activeIndex;
+                slides.forEach(function (slide, index) {
+                    if (index !== activeIndex) {
+                        slide.style.opacity = 0.5;
+                        slide.style.filter = 'blur(99px)';
+                    }
+                });
+            }
+        }
     });
 });
+
 
 updateLinkText();
 window.addEventListener('resize', updateLinkText);
