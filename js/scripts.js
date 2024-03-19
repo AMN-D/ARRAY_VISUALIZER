@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 'auto',
         spaceBetween: 20,
         centeredSlides: true,
-        freeMode: true, 
+        freeMode: window.innerWidth > 700,
         
         on: {
             slideChange: function () {
@@ -29,8 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 var activeIndex = this.activeIndex;
                 slides.forEach(function (slide, index) {
                     if (index !== activeIndex) {
-                        slide.style.opacity = 0.5;
-                        slide.style.filter = 'blur(99px)';
+                        if (window.innerWidth <= 700){
+                            slide.style.opacity = 0.5;
+                            slide.style.filter = 'none';
+                        } else {
+                            slide.style.opacity = 0.5;
+                            slide.style.filter = 'blur(99px)';
+                        }
                     }
                 });
             }
