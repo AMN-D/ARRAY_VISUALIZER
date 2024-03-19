@@ -116,6 +116,7 @@ header div .link .document:hover {
   .home .innerhome .title {
     height: 20%;
     width: 100%;
+    text-wrap: wrap;
   }
 }
 .home .innerhome .title h1 {

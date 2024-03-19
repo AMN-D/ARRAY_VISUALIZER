@@ -133,6 +133,7 @@ header {
             @media only screen and (max-width: $small){
                 height: 20%;
                 width: 100%;
+                text-wrap:wrap;
             }
             h1 {
                 margin: 0;

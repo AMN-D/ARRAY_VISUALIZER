@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 'auto',
         spaceBetween: 20,
         centeredSlides: true,
-        freeMode: window.innerWidth > 700,
+        freeMode: false,
         
         on: {
             slideChange: function () {
