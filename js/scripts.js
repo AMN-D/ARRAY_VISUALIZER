@@ -43,6 +43,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 updateLinkText();
 window.addEventListener('resize', updateLinkText);
