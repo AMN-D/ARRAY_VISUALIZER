@@ -22,4 +22,11 @@ function animate() {
     
     renderer.render( scene, camera );
 }
-animate();
+
+if (renderer.capabilities.isWebGL2) {
+    animate();
+} else {
+    const warning = document.createElement('div');
+    warning.innerHTML = 'WebGL 2 is not available.';
+    document.getElementById('array-container').appendChild(warning);
+}
