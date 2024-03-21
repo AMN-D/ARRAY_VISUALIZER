@@ -7,3 +7,11 @@ body {
     background-color: #E6E6FA;
     font-family: "Poppins", sans-serif;
 }
+
+#desc {
+    position: absolute;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+}
