@@ -63,6 +63,7 @@ function createCubes(positions) {
     positions.reverse().forEach((row, rowIndex) => {
         const rowCubes = [];
         row.forEach((pos, colIndex) => {
+
             const cube = new THREE.Mesh(
                 new THREE.BoxGeometry(3, 3, 3),
                 new THREE.MeshPhongMaterial({
