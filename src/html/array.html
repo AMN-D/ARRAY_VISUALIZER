@@ -14,7 +14,7 @@
       <h1>ARRAY</h1>
     </div>
     <div class="textbody">
-      <textarea placeholder="Click here to insert your array like this [1, 2, 3] . . "></textarea>
+      <textarea id="array-input" placeholder="Click here to insert your array like this [1, 2, 3] Press Shift+Enter to visualize ... " onkeydown="handelKeyDown( event )"></textarea>
     </div>
     <div class="aooter">
       <div class="details">
@@ -43,6 +43,31 @@
           }
         }
       </script>      
-    <script type="module" src="../js/array.js"></script>
+      <script>
+        function handelKeyDown( event ) {
+            if ( event.shiftKey && event.key === "Enter" ) {
+                event.preventDefault();
+                readArray();
+            }
+        } 
+
+        function readArray() {
+            var textarea = document.getElementById("array-input");
+            var text = textarea.value;
+
+            try {
+                var array = JSON.parse(text);
+
+                if(Array.isArray(array)) {
+                    console.log("Array: ", array);
+                } else {
+                    console.log("Input is not an array", text);
+                }
+            } catch ( error ) {
+                console.error("Error Parsing JSON:", error);
+            }
+        }
+      </script>
+    <script defer type="module" src="../js/array.js"></script>
 </body>
 </html>
