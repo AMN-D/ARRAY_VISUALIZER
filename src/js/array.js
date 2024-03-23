@@ -101,7 +101,7 @@ function createTextSprite(message) {
     canvas.width = textWidth + padding * 2;
     canvas.height = fontSize + padding * 2;
     context.font = `normal ${fontSize}px Arial`;
-    context.fillStyle = 'white';
+    context.fillStyle = "grey" ;
     context.fillText(message, padding, fontSize + padding);
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -125,6 +125,7 @@ fontloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
 
     // Main setup
     const inputArray = [
+        [1, 2, 3],
         [1, 2, 3],
         [1, 2, 3],
     ];
