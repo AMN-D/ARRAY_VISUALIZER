@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: snow;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  height: 2.5rem;
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    border-bottom: 1px solid #121212;
+  }
+}
+header div {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+}
+header div .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #121212;
+}
+header div .logo a svg {
+  width: 1.5rem;
+  height: auto;
+  padding-right: 0.3rem;
+}
+@media only screen and (max-width: 700px) {
+  header div .logo a svg {
+    width: 2rem;
+  }
+}
+header div .logo a h1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+header div .link {
+  justify-content: end;
+}
+header div .link a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 0.8rem;
+}
+header div .link .contact {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 0.8rem;
+  font-weight: 400;
+}
+header div .link .contact:hover {
+  background-color: #121212;
+  color: snow;
+}
+header div .link .document {
+  font-weight: 300;
+}
+header div .link .document:hover {
+  text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  header div .link .document {
+    font-size: 0.65rem;
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main .inner {
+  overflow: hidden;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.main .inner .link {
+  height: 15%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .inner .link a {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 0.8rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #121212;
+  margin: 0 0.5rem;
+}
+.main .inner .link a:hover {
+  background-color: #121212;
+  color: snow;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .link {
+    overflow: auto;
+    justify-content: start;
+  }
+}
+.main .inner .logo {
+  display: flex;
+  align-items: center;
+  height: 40%;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .logo {
+    align-items: start;
+    height: auto;
+  }
+}
+.main .inner .logo h1 {
+  font-weight: 900;
+  font-size: 21.5rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1rem;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .logo h1 {
+    font-size: 5rem;
+    letter-spacing: normal;
+  }
+}
+.main .inner .desc {
+  width: 100%;
+  height: 15%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .desc {
+    height: 10%;
+  }
+}
+.main .inner .desc p {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-decoration: underline #262626;
+  text-decoration-style: wavy;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .desc p {
+    text-align: center;
+    width: 20rem;
+  }
+}
+.main .inner .foot, .main .inner .foot .right, .main .inner .foot .left, .main .inner .foot .center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+  padding: 0;
+  justify-content: center;
+  align-items: end;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot, .main .inner .foot .right, .main .inner .foot .left, .main .inner .foot .center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+  }
+}
+.main .inner .foot .center {
+  padding: 0;
+  width: 40%;
+  height: 100%;
+}
+.main .inner .foot .center a {
+  text-wrap: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin: 0 0.8rem;
+  font-weight: 400;
+  border: 1px solid #121212;
+  padding: 0.8rem 4rem;
+  margin: 0 0.8rem;
+  font-weight: 300;
+  background-color: #121212;
+  color: snow;
+  cursor: pointer;
+}
+.main .inner .foot .center a:hover {
+  background-color: #121212;
+  color: snow;
+}
+.main .inner .foot .center a:hover {
+  color: #121212;
+  background-color: snow;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot .center {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+}
+.main .inner .foot .left, .main .inner .foot .right {
+  transition: all 0.3s ease-in-out;
+  width: 30%;
+  height: 100%;
+  padding: 0;
+  justify-content: start;
+}
+.main .inner .foot .left a, .main .inner .foot .right a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.main .inner .foot .left a li::marker, .main .inner .foot .right a li::marker {
+  color: salmon;
+}
+@media only screen and (max-width: 700px) {
+  .main .inner .foot .left, .main .inner .foot .right {
+    display: none;
+  }
+}
+.main .inner .foot .right {
+  justify-content: end;
+}
+.main .inner .foot .right ul li {
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+.main .inner .foot .right ul li a {
+  font-weight: 400;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  height: 20%;
+  padding: 1rem;
+  overflow: hidden;
+  color: snow;
+  background-color: #000;
+}
+@media only screen and (max-width: 700px) {
+  footer {
+    height: 5%;
+  }
+}
+footer .cover {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+footer .cover .qrcode img {
+  width: 5rem;
+}
+@media only screen and (max-width: 700px) {
+  footer .cover .qrcode img {
+    width: 2rem;
+  }
+}
+footer .cover .main {
+  display: flex;
+  align-items: center;
+}
+footer .cover .main .left, footer .cover .main .right, footer .cover .main .inner .foot .right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  padding: 1rem;
+  width: 50%;
+}
+footer .cover .main .left p, footer .cover .main .right p, footer .cover .main .inner .foot .right p {
+  padding: 0;
+  padding-bottom: 0.5rem;
+  margin: 0;
+  width: 30%;
+  line-height: 1;
+  font-weight: 200;
+}
+@media only screen and (max-width: 700px) {
+  footer .cover .main .left p, footer .cover .main .right p, footer .cover .main .inner .foot .right p {
+    display: none;
+    padding-bottom: 0;
+  }
+}
+footer .cover .main .left h6, footer .cover .main .right h6, footer .cover .main .inner .foot .right h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (max-width: 700px) {
+  footer .cover .main .left h6, footer .cover .main .right h6, footer .cover .main .inner .foot .right h6 {
+    font-size: 0.6rem;
+    text-align: left;
+  }
+}
+footer .cover .main .right {
+  align-items: end;
+  justify-content: right;
+}
+footer .cover .main .right a {
+  text-decoration: none;
+  color: #121212;
+  color: salmon;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+footer .cover .main .right a:hover {
+  color: snow;
+}
+@media only screen and (max-width: 700px) {
+  footer .cover .main .right a {
+    padding-bottom: 0.1rem;
+    font-size: 0.5rem;
+  }
+}
+footer .cover .main .right .block {
+  transition: all 0.3s ease-in-out;
+  padding: 0.6rem 1rem;
+  border-radius: 0.2rem;
+  background: linear-gradient(0deg, #FF671F 33.33%, #ffffff 33.33%, #ffffff 66.67%, #046A38 66.67%);
+}
+@media only screen and (max-width: 700px) {
+  footer .cover .main .right .block {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

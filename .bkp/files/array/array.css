@@ -7,4 +7,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /*# sourceMappingURL=array.css.map */
