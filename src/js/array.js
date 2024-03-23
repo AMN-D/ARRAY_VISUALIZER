@@ -20,7 +20,7 @@ controls.enableDamping = true;
 // lights
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-scene.background = new THREE.Color(0x87CEEB);
+scene.background = new THREE.Color(0x000);
 directionalLight.castShadow = true; 
 
 // textures
