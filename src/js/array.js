@@ -1,89 +1,61 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+const minecraftglass = "https://i.postimg.cc/KvxghRQm/glass.png";
+
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg'),
-});
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const textureLoader = new THREE.TextureLoader();
 
-const bgTexture = new THREE.TextureLoader().load('https://i.postimg.cc/FH4sc3tS/background.jpg');
-scene.background = bgTexture;
-
-const glassblock = new THREE.TextureLoader().load('https://i.postimg.cc/zXKH9TTt/glass.png');
-const moonnormal = new THREE.TextureLoader().load('https://i.postimg.cc/fRTSqChx/lunarrock-n.png');
-const moontexture = new THREE.TextureLoader().load('https://i.postimg.cc/xTgcmmbq/lunarrock-s.png');
-
-const gblock = new THREE.Mesh(
-    new THREE.BoxGeometry(3,3,3),
-    new THREE.MeshStandardMaterial( {
-        map: glassblock,
-        transparent: true,  
-    } )
-);
-
-const moon = new THREE.Mesh(
-    new THREE.SphereGeometry(3,32,32),
-    new THREE.MeshStandardMaterial( {
-        map: moontexture,  
-        normalMap: moonnormal,
-    } )
-);
-
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
-
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({
-    color: 0xFF6347,
-});
-const torus = new THREE.Mesh(geometry, material);
-scene.add( torus, gblock, moon );
-
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(0, 0, 0);
-pointLight.intensity = 200;
-
-const ambientLight = new THREE.AmbientLight(0xffffff);
-ambientLight.intensity = 1.5;
-
-const lightHelper = new THREE.PointLightHelper(pointLight);
-
-const gridHelper = new THREE.GridHelper(200, 50);
-
-scene.add(pointLight, ambientLight );
+const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), });
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild( renderer.domElement );
 
 const controls = new OrbitControls( camera, renderer.domElement );
+controls.enableDamping = true;
 
-function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25);
-    const material = new THREE.MeshStandardMaterial({
-        color: 0x161616,
+// lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+scene.background = new THREE.Color(0x87CEEB);
+directionalLight.castShadow = true; 
+
+// textures
+const minecraftGlassTexture = textureLoader.load('https://i.postimg.cc/x1656gcm/tinted-glass.png');
+
+// models
+const cube = new THREE.Mesh(
+    new THREE.BoxGeometry(3, 3, 3),
+    new THREE.MeshStandardMaterial({
+        map: minecraftGlassTexture,
+        transparent: true,  
     })
-    const star = new THREE.Mesh( geometry, material );
+);
+cube.castShadow = true; 
+cube.receiveShadow = true;
 
-    const [x, y, z] = Array.from({ length: 3 }, () => THREE.MathUtils.randFloatSpread(100));
-    star.position.set(x, y, z);
-    scene.add( star );
-}
+const floor = new THREE.Mesh(
+    new THREE.BoxGeometry(15, 15, 15),
+    new THREE.MeshStandardMaterial({ color: 0x808080, side: THREE.DoubleSide }),
+);
+floor.rotation.x = -Math.PI / 2;
+floor.receiveShadow = true;
 
-Array.from({ length: 200 }).forEach(addStar);
+// functions
+    
+// Positions
+camera.position.set(0, 10, 20);
+directionalLight.position.set(5, 10, 5);
+floor.position.setY(-10);
+
+scene.add( cube, ambientLight, directionalLight, floor );
 
 function animate() {
-    requestAnimationFrame(animate);
-
-    torus.rotation.x += 0.01;
-    torus.rotation.y += 0.01;
-    torus.rotation.z += 0.01;
-    
-    moon.rotation.x += 0.01;
-    moon.rotation.y += 0.01;
-    moon.rotation.z += 0.01;
-
+	requestAnimationFrame( animate );
     controls.update();
-
-    renderer.render(scene, camera);
+	renderer.render( scene, camera );
 }
-
 animate();
