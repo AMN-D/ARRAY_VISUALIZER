@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
 // Textures
 const minecraftglass = "https://mineblocks.com/1/wiki/images/1/15/Glass.png";
@@ -78,28 +80,68 @@ function createCubes(positions) {
             cube.position.set(pos * 0, rowIndex * 3, colIndex * 3);
             cube.castShadow = true;
             rowCubes.push(cube);
+
+            const textSprite = createTextSprite(`(${rowIndex},${colIndex})`);
+            textSprite.position.set(pos * 0.1, rowIndex * 0.1, colIndex * 0.1);
+            cube.add(textSprite);
+
         });
         cubes.push(rowCubes);
     });
     return cubes;
 }
 
-// Main setup
-const inputArray = [
-    [1, 2, 3],
-];
+function createTextSprite(message) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    const fontSize = 25; 
+    const padding = 10; 
+    context.font = `normal ${fontSize}px Arial`;
+    const textWidth = context.measureText(message).width;
+    canvas.width = textWidth + padding * 2;
+    canvas.height = fontSize + padding * 2;
+    context.font = `normal ${fontSize}px Arial`;
+    context.fillStyle = 'white';
+    context.fillText(message, padding, fontSize + padding);
 
-const cubes = createCubes(inputArray);
-cubes.forEach(row => {
-    row.forEach(cube => {
-        scene.add(cube);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.needsUpdate = true;
+
+    const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+    const sprite = new THREE.Sprite(spriteMaterial);
+    
+    spriteMaterial.depthTest = false;
+    sprite.scale.set(2, 1, 1);
+    return sprite;
+}
+
+
+
+const fontloader = new FontLoader();
+let myfont ;
+fontloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+    
+    myfont = font;
+
+    // Main setup
+    const inputArray = [
+        [1, 2, 3],
+        [1, 2, 3],
+    ];
+    
+    const cubes = createCubes(inputArray);
+    cubes.forEach(row => {
+        row.forEach(cube => {
+            scene.add(cube);
+        });
     });
+    
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
 });
 
-// Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-}
-animate();
