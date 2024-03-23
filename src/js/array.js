@@ -7,6 +7,9 @@ const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
 });
 
+const bgTexture = new THREE.TextureLoader().load('https://i.postimg.cc/FH4sc3tS/background.jpg');
+scene.background = bgTexture;
+
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
@@ -14,13 +17,12 @@ camera.position.setZ(30);
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({
     color: 0xFF6347,
-    wireframe: true,
 });
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 
 const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
+pointLight.position.set(0, 0, 0);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 
@@ -31,6 +33,20 @@ const gridHelper = new THREE.GridHelper(200, 50);
 scene.add(pointLight, ambientLight, lightHelper, gridHelper);
 
 const controls = new OrbitControls( camera, renderer.domElement );
+
+function addStar() {
+    const geometry = new THREE.SphereGeometry(0.25);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x161616,
+    })
+    const star = new THREE.Mesh( geometry, material );
+
+    const [x, y, z] = Array.from({ length: 3 }, () => THREE.MathUtils.randFloatSpread(100));
+    star.position.set(x, y, z);
+    scene.add( star );
+}
+
+Array.from({ length: 200 }).forEach(addStar);
 
 function animate() {
     requestAnimationFrame(animate);
