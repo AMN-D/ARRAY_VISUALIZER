@@ -64,8 +64,7 @@ function createCubes(positions) {
     const cubes = [];
     positions.reverse().forEach((row, rowIndex) => {
         const rowCubes = [];
-        row.forEach((pos, colIndex) => {
-
+        row.forEach((value, colIndex) => { 
             const cube = new THREE.Mesh(
                 new THREE.BoxGeometry(3, 3, 3),
                 new THREE.MeshPhongMaterial({
@@ -77,14 +76,13 @@ function createCubes(positions) {
                     reflectivity: 1,
                 })
             );
-            cube.position.set(pos * 0, rowIndex * 3, colIndex * 3);
+            cube.position.set(value * 0, rowIndex * 3, colIndex * 3); 
             cube.castShadow = true;
             rowCubes.push(cube);
 
-            const textSprite = createTextSprite(`(${rowIndex},${colIndex})`);
-            textSprite.position.set(pos * 0.1, rowIndex * 0.1, colIndex * 0.1);
+            const textSprite = createTextSprite(`${value}\n(${rowIndex},${colIndex})`);
+            textSprite.position.set(value * 0, rowIndex * 0.1, colIndex * 0.1);
             cube.add(textSprite);
-
         });
         cubes.push(rowCubes);
     });
@@ -105,31 +103,59 @@ function createTextSprite(message) {
     context.fillText(message, padding, fontSize + padding);
 
     const texture = new THREE.CanvasTexture(canvas);
-    texture.needsUpdate = true;
+    texture.needsUpdate = false;
 
     const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
     const sprite = new THREE.Sprite(spriteMaterial);
     
     spriteMaterial.depthTest = false;
-    sprite.scale.set(2, 1, 1);
+    sprite.scale.set(2, 1.1, 0);
     return sprite;
 }
-
-
 
 const fontloader = new FontLoader();
 let myfont ;
 fontloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
     
     myfont = font;
-
-    // Main setup
-    const inputArray = [
-        [1, 2, 3],
-        [1, 2, 3],
+    
+    let inputArray = [
         [1, 2, 3],
     ];
     
+    function handleKeyDown( event ) {
+        if ( event.shiftKey && event.key === "Enter" ) {
+            event.preventDefault();
+            readArray();
+        }
+    } 
+    
+    function readArray() {
+        var textarea = document.getElementById("array-input");
+        var text = textarea.value;
+    
+        try {
+            var array = JSON.parse(text);
+    
+            if(Array.isArray(array)) {
+                console.log("Array: ", inputArray);
+    
+            } else {
+                console.log("Input is not an array", text);
+            }
+        } catch ( error ) {
+            console.error("Error Parsing JSON:", error);
+        }
+    }
+    
+    const textarea = document.getElementById("array-input");
+    textarea.addEventListener("keydown", function(event) {
+        if (event.shiftKey && event.key === "Enter") {
+            event.preventDefault();
+            handleKeyDown(event); 
+        }
+    });
+
     const cubes = createCubes(inputArray);
     cubes.forEach(row => {
         row.forEach(cube => {
