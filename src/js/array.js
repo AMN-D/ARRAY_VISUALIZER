@@ -17,6 +17,14 @@ scene.fog = new THREE.Fog(0x121212, 2, 500);
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(-10, 10, 10);
 
+function setCameraPosition() {
+
+    if(window.innerWidth <= 700) {
+        camera.position.set(-7.491880178030935, 9.490640316956338, 13.54769462834139);
+    }
+};
+setCameraPosition();
+
 // Renderer setup
 const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -167,6 +175,8 @@ fontloader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.
     function animate() {
         requestAnimationFrame(animate);
         controls.update();
+        var currentPosition = camera.position;
+        console.log("Current camera position:", currentPosition);
         renderer.render(scene, camera);
     }
     animate();

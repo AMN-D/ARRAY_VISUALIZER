@@ -31,6 +31,15 @@ body {
   justify-content: space-between;
   backdrop-filter: blur(100px);
 }
+@media (max-width: 700px) {
+  .main {
+    width: 80%;
+    height: 40%;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 0%);
+  }
+}
 .main .aeader {
   background-color: #fff;
   border-radius: 1rem;
@@ -39,6 +48,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 700px) {
+  .main .aeader {
+    height: 30%;
+  }
 }
 .main .aeader h1 {
   display: inline-block;
@@ -56,6 +70,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 700px) {
+  .main .textbody {
+    height: 45%;
+  }
 }
 .main .textbody textarea {
   padding: 1rem;
@@ -79,10 +98,20 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 700px) {
+  .main .aooter {
+    height: 15%;
+  }
+}
 .main .aooter .details {
   height: 55%;
   width: 100%;
   display: flex;
+}
+@media (max-width: 700px) {
+  .main .aooter .details {
+    display: none;
+  }
 }
 .main .aooter .details .symbol {
   display: flex;
@@ -120,6 +149,11 @@ body {
   border-radius: 1rem;
   align-items: center;
   overflow: hidden;
+}
+@media (max-width: 700px) {
+  .main .aooter .typebox {
+    height: 100%;
+  }
 }
 .main .aooter .typebox input {
   height: 100%;

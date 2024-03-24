@@ -36,6 +36,13 @@ body {
     align-items: center;
     justify-content: space-between;
     backdrop-filter: blur(100px);
+        @media (max-width: 700px) {
+            width: 80%;
+            height: 40%;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, 0%);
+        }
     .aeader {
         background-color: $secondary;
         border-radius: 1rem;
@@ -44,6 +51,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 700px) {
+            height: 30%;
+        }
         h1 {
             display: inline-block;
             font-size: 6rem;
@@ -61,6 +71,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 700px) {
+            height: 45%;
+        }
         textarea {
             padding: 1rem;
             height: 85%;
@@ -83,10 +96,16 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: 700px) {
+            height: 15%;
+        }
         .details {
             height: 55%;
             width: 100%;
             display: flex;
+            @media (max-width: 700px) {
+                display: none;
+            }
             .symbol {
                 display: flex;
                 justify-content: center;
@@ -124,6 +143,9 @@ body {
             border-radius: 1rem;
             align-items: center;
             overflow: hidden;
+            @media (max-width: 700px) {
+                height: 100%;
+            }
             input {
                 height: 100%;
                 width: 50%;
