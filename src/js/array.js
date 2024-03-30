@@ -66,7 +66,6 @@ scene.add( cube );
 function animate() {
 	requestAnimationFrame( animate );
     controls.update();
-    console.log(arr);
 	renderer.render( scene, camera );
 }
 animate();
