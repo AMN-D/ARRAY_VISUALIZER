@@ -31,12 +31,11 @@ function createCubes(array) {
     array.forEach((value, index) => {
         const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
         const cubeMaterial = new THREE.MeshStandardMaterial({ 
-            color: 0x00ff00,
-            wireframe: true,
+            color: "#d6fd5d",
         });
         const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
         cube.position.set(index * 1 - array.length, 0, 0); 
-        scene.add( cube );
+        scene.add( cube ); 
     })
 }
 
@@ -59,7 +58,7 @@ scene.add(ambientLight);
 
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
 const cubeMaterial = new THREE.MeshStandardMaterial({ 
-    color: 0x00ff00,
+    color: "#d6fd5d",
 });
 const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 scene.add( cube );
