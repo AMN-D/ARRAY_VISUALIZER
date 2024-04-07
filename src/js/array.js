@@ -1,23 +1,68 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+const textureLoader = new THREE.TextureLoader();
+
 let arr = [1];
 const arrayInput = document.getElementById("array-input");
+const firstNumber = document.getElementById("firstNumber");
+const secondNumber = document.getElementById("secondNumber");
 
-arrayInput.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function(event) {
     if (event.shiftKey && event.key === "Enter") {
         event.preventDefault();
         try {
-            arr = JSON.parse(arrayInput.value);
-            for (let i = 0; i < arr.length*2; i++) {
-                createCubes(arr);
-              }
+            // Parse the array input value
+            const arr = JSON.parse(arrayInput.value);
+            const firstValue = parseInt(firstNumber.value);
+            const secondValue = parseInt(secondNumber.value);
+            
+            createCubes(arr);
+            highlightCubes(firstValue, secondValue, arr);
         } catch (error) {
-            console.log("Input is not an array !");
+            console.log("Input is not an array!");
         }
-        console.log(arr);
     }
-})
+});
+
+
+const minecraftGlassStained = textureLoader.load('../assets/white_stained_glass.png');
+
+function highlightCubes(firstNumber, secondNumber, array) {
+    // Remove existing highlighted cubes
+    scene.children.forEach(child => {
+        if (child.userData.isHighlighted) {
+            scene.remove(child);
+        }
+    });
+    // Loop through existing cubes to add highlighted cubes
+    array.forEach((subArray, subIndex) => {
+        subArray.forEach((innerArray, outerIndex) => {
+            innerArray.forEach((values, innerIndex) => {
+                if (values >= firstNumber && values <= secondNumber) {
+                    console.log(values);
+                    const HighlightcubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+                    const HighlightcubeMaterial = new THREE.MeshStandardMaterial({ 
+                        color: 0x00ff00, // Green color
+                        transparent: true, // Enable transparency
+                        opacity: 0.5, // Set the opacity level (adjust as needed)
+                    });
+                    const Highlightcube = new THREE.Mesh(HighlightcubeGeometry, HighlightcubeMaterial);
+                    Highlightcube.castShadow = true;
+                    Highlightcube.receiveShadow = true;
+                    const xPos = innerIndex ;
+                    const yPos = outerIndex;
+                    const zPos = subIndex; 
+                    Highlightcube.position.set(xPos, yPos, zPos);
+                    scene.add(Highlightcube);
+                    Highlightcube.userData.isHighlighted = true; // Flag to identify cubes for raycasting
+                }
+            });
+        });
+    });
+}
+
+
 
 // Connector
 
@@ -116,23 +161,22 @@ const pointLightBottom = new THREE.PointLight(0xffffff, 5); // color, intensity
 pointLightBottom.position.set(0, 0, 0); 
 scene.add(pointLightBottom);
 
-const pointLightLeft = new THREE.PointLight(0xffffff, 5); // color, intensity
+const pointLightLeft = new THREE.PointLight(0xffffff, 10); // color, intensity
 pointLightLeft.position.set(5, 5, 0); 
 scene.add(pointLightLeft);
 
-const pointLightRight = new THREE.PointLight(0xffffff, 5); // color, intensity
+const pointLightRight = new THREE.PointLight(0xffffff, 10); // color, intensity
 pointLightRight.position.set(-5, 5, 0); // Adjust position for the right
 scene.add(pointLightRight);
 
-const pointLightFront = new THREE.PointLight(0xffffff, 5); // color, intensity
+const pointLightFront = new THREE.PointLight(0xffffff, 10); // color, intensity
 pointLightFront.position.set(0, 5, -5); // Adjust position for the front
 scene.add(pointLightFront);
 
-const pointLightBack = new THREE.PointLight(0xffffff, 5); // color, intensity
+const pointLightBack = new THREE.PointLight(0xffffff, 10); // color, intensity
 pointLightBack.position.set(0, 5, 5); // Adjust position for the back
 scene.add(pointLightBack);
 
-const textureLoader = new THREE.TextureLoader();
 const minecraftGlass = textureLoader.load('../assets/glass.png');
 
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
