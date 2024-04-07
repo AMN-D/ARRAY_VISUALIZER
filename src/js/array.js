@@ -36,15 +36,14 @@ function createCubes(array) {
                 const cubeMaterial = new THREE.MeshStandardMaterial({ 
                     color: 0xffffff,
                     map: minecraftGlass,
-                    transparent: true, 
-                    refractionRatio: 0.9, 
                     metalness: 0.5, 
                     roughness: 0.2,
+                    alphaTest: 0.1,
                 });
                 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
                 cube.castShadow = true;
                 cube.receiveShadow = true;
-                const xPos = innerIndex - (innerArray.length - 1);
+                const xPos = innerIndex ;
                 const yPos = outerIndex;
                 const zPos = subIndex; 
                 cube.position.set(xPos, yPos, zPos);
@@ -56,7 +55,7 @@ function createCubes(array) {
                 spriteCanvas.height = 64; 
                 const spriteContext = spriteCanvas.getContext('2d');
                 spriteContext.font = '20px Arial';
-                spriteContext.fillStyle = 'white';
+                spriteContext.fillStyle = 'gray';
                 spriteContext.fillText(values, 25, 35); 
                 
                 const spriteTexture = new THREE.CanvasTexture(spriteCanvas);
@@ -84,7 +83,7 @@ const fogFar = 100;
 scene.fog = new THREE.Fog(fogColor, fogNear, fogFar);
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set(0, 0, 8);
+camera.position.set(3, 5, 5);
 camera.lookAt(0, 0, 0);
 
 const canvas = document.getElementById("bg");
@@ -95,25 +94,43 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const controls = new OrbitControls( camera, renderer.domElement );
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
+var ambientLight = new THREE.AmbientLight(0xffffff, 0.2); 
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 5, 5); 
-directionalLight.castShadow = true;
-scene.add(directionalLight);
-directionalLight.shadow.mapSize.width = 1024;
-directionalLight.shadow.mapSize.height = 1024;
-directionalLight.shadow.camera.top = 10;
-directionalLight.shadow.camera.bottom = -10;
-directionalLight.shadow.camera.left = -10;
-directionalLight.shadow.camera.right = 10;
-directionalLight.shadow.camera.near = 0.1;
-directionalLight.shadow.camera.far = 100;
+// Create a spotlight
+const spotlight = new THREE.SpotLight(0xffffff, 50);
+spotlight.position.set(0, 10, 0); // Position the spotlight
+spotlight.angle = Math.PI / 6; // Set the spotlight angle
+spotlight.penumbra = 0.5; // Softens the edges of the spotlight
+spotlight.decay = 2; // How the light intensity attenuates over distance
+spotlight.distance = 200; // The distance at which the light intensity is zero
+spotlight.castShadow = true; // Enable shadow casting
+scene.add(spotlight);
 
-// Add helper for directional light
-const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 1);
-scene.add(directionalLightHelper);
+// Helper to visualize the spotlight
+// const spotlightHelper = new THREE.SpotLightHelper(spotlight);
+// scene.add(spotlightHelper);
+
+// Create a point light
+const pointLightBottom = new THREE.PointLight(0xffffff, 5); // color, intensity
+pointLightBottom.position.set(0, 0, 0); 
+scene.add(pointLightBottom);
+
+const pointLightLeft = new THREE.PointLight(0xffffff, 5); // color, intensity
+pointLightLeft.position.set(5, 5, 0); 
+scene.add(pointLightLeft);
+
+const pointLightRight = new THREE.PointLight(0xffffff, 5); // color, intensity
+pointLightRight.position.set(-5, 5, 0); // Adjust position for the right
+scene.add(pointLightRight);
+
+const pointLightFront = new THREE.PointLight(0xffffff, 5); // color, intensity
+pointLightFront.position.set(0, 5, -5); // Adjust position for the front
+scene.add(pointLightFront);
+
+const pointLightBack = new THREE.PointLight(0xffffff, 5); // color, intensity
+pointLightBack.position.set(0, 5, 5); // Adjust position for the back
+scene.add(pointLightBack);
 
 const textureLoader = new THREE.TextureLoader();
 const minecraftGlass = textureLoader.load('../assets/glass.png');
@@ -122,9 +139,9 @@ const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
 const cubeMaterial = new THREE.MeshStandardMaterial({ 
     color: 0xffffff,
     map: minecraftGlass,
-    transparent: true, 
     metalness: 0.5, 
     roughness: 0.2,
+    alphaTest: 0.1,
 });
 const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 cube.castShadow = true;
@@ -139,6 +156,33 @@ ground.rotation.x = -Math.PI / 2;
 ground.position.y -= 0.5;
 ground.receiveShadow = true;
 scene.add(ground);
+
+// Y-axis line
+const yPoints = [];
+yPoints.push(new THREE.Vector3(0, 0, 0)); // Start point (at origin)
+yPoints.push(new THREE.Vector3(0, 10, 0)); // End point (along the y-axis)
+const yLineMaterial = new THREE.LineBasicMaterial({ color: 0xBCF5A6 }); // Line color
+const yLineGeometry = new THREE.BufferGeometry().setFromPoints(yPoints);
+const yLine = new THREE.Line(yLineGeometry, yLineMaterial);
+scene.add(yLine);
+
+// X-axis line
+const xPoints = [];
+xPoints.push(new THREE.Vector3(-10, 0, 0)); // Start point (at origin)
+xPoints.push(new THREE.Vector3(10, 0, 0)); // End point (along the x-axis)
+const xLineMaterial = new THREE.LineBasicMaterial({ color: 0xDB6A6C }); // Line color
+const xLineGeometry = new THREE.BufferGeometry().setFromPoints(xPoints);
+const xLine = new THREE.Line(xLineGeometry, xLineMaterial);
+scene.add(xLine);
+
+// Z-axis line
+const zPoints = [];
+zPoints.push(new THREE.Vector3(0, 0, -10)); // Start point (at origin)
+zPoints.push(new THREE.Vector3(0, 0, 10)); // End point (along the z-axis)
+const zLineMaterial = new THREE.LineBasicMaterial({ color: 0x658CBB }); // Line color
+const zLineGeometry = new THREE.BufferGeometry().setFromPoints(zPoints);
+const zLine = new THREE.Line(zLineGeometry, zLineMaterial);
+scene.add(zLine);
 
 function animate() {
 	requestAnimationFrame( animate );
