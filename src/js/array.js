@@ -8,6 +8,22 @@ const arrayInput = document.getElementById("array-input");
 const firstNumber = document.getElementById("firstNumber");
 const secondNumber = document.getElementById("secondNumber");
 
+document.getElementById('load-3d-array').addEventListener('click', function(event) {
+    try {
+        // Parse the array input value
+        const arr = JSON.parse(arrayInput.value);
+        const firstValue = parseInt(firstNumber.value);
+        const secondValue = parseInt(secondNumber.value);
+
+        // Call the functions to create cubes and highlight them
+        createCubes(arr);
+        highlightCubes(firstValue, secondValue, arr);
+    } catch (error) {
+        console.log("Input is not an array!");
+    }
+});
+
+
 document.addEventListener('keydown', function(event) {
     
     if (event.shiftKey && event.key === "Enter") {
