@@ -9,6 +9,7 @@ const firstNumber = document.getElementById("firstNumber");
 const secondNumber = document.getElementById("secondNumber");
 
 document.addEventListener('keydown', function(event) {
+    
     if (event.shiftKey && event.key === "Enter") {
         event.preventDefault();
         try {
@@ -16,7 +17,6 @@ document.addEventListener('keydown', function(event) {
             const arr = JSON.parse(arrayInput.value);
             const firstValue = parseInt(firstNumber.value);
             const secondValue = parseInt(secondNumber.value);
-            
             createCubes(arr);
             highlightCubes(firstValue, secondValue, arr);
         } catch (error) {
@@ -143,7 +143,7 @@ var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 // Create a spotlight
-const spotlight = new THREE.SpotLight(0xffffff, 50);
+const spotlight = new THREE.SpotLight(0xfdf4dc, 100);
 spotlight.position.set(0, 10, 0); // Position the spotlight
 spotlight.angle = Math.PI / 6; // Set the spotlight angle
 spotlight.penumbra = 0.5; // Softens the edges of the spotlight
@@ -156,8 +156,37 @@ scene.add(spotlight);
 // const spotlightHelper = new THREE.SpotLightHelper(spotlight);
 // scene.add(spotlightHelper);
 
+// Create directional light facing east
+const directionalLightEast = new THREE.DirectionalLight(0xff0000, 0.1);
+directionalLightEast.position.set(10, 0, 0); // Position to the east
+directionalLightEast.target.position.set(0, 0, 0); // Pointing towards the center
+scene.add(directionalLightEast);
+scene.add(directionalLightEast.target);
+
+// Create directional light facing west
+const directionalLightWest = new THREE.DirectionalLight(0xff0000, 0.1);
+directionalLightWest.position.set(-10, 0, 0); // Position to the west
+directionalLightWest.target.position.set(0, 0, 0); // Pointing towards the center
+scene.add(directionalLightWest);
+scene.add(directionalLightWest.target);
+
+// Create directional light facing north
+const directionalLightNorth = new THREE.DirectionalLight(0x0000ff, 0.1);
+directionalLightNorth.position.set(0, 0, -10); // Position to the north
+directionalLightNorth.target.position.set(0, 0, 0); // Pointing towards the center
+scene.add(directionalLightNorth);
+scene.add(directionalLightNorth.target);
+
+// Create directional light facing south
+const directionalLightSouth = new THREE.DirectionalLight(0x0000ff, 0.1);
+directionalLightSouth.position.set(0, 0, 10); // Position to the south
+directionalLightSouth.target.position.set(0, 0, 0); // Pointing towards the center
+scene.add(directionalLightSouth);
+scene.add(directionalLightSouth.target);
+
+
 // Create a point light
-const pointLightBottom = new THREE.PointLight(0xffffff, 5); // color, intensity
+const pointLightBottom = new THREE.PointLight(0xffffff, 2); // color, intensity
 pointLightBottom.position.set(0, 0, 0); 
 scene.add(pointLightBottom);
 
@@ -232,6 +261,7 @@ function animate() {
 	requestAnimationFrame( animate );
     controls.update();
 	renderer.render( scene, camera );
+    
 }
 animate();
 
