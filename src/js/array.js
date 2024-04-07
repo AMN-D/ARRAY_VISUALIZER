@@ -94,7 +94,7 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const controls = new OrbitControls( camera, renderer.domElement );
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 0.2); 
+var ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
 scene.add(ambientLight);
 
 // Create a spotlight
@@ -160,7 +160,7 @@ scene.add(ground);
 // Y-axis line
 const yPoints = [];
 yPoints.push(new THREE.Vector3(0, 0, 0)); // Start point (at origin)
-yPoints.push(new THREE.Vector3(0, 10, 0)); // End point (along the y-axis)
+yPoints.push(new THREE.Vector3(0, 100, 0)); // End point (along the y-axis)
 const yLineMaterial = new THREE.LineBasicMaterial({ color: 0xBCF5A6 }); // Line color
 const yLineGeometry = new THREE.BufferGeometry().setFromPoints(yPoints);
 const yLine = new THREE.Line(yLineGeometry, yLineMaterial);
@@ -168,8 +168,8 @@ scene.add(yLine);
 
 // X-axis line
 const xPoints = [];
-xPoints.push(new THREE.Vector3(-10, 0, 0)); // Start point (at origin)
-xPoints.push(new THREE.Vector3(10, 0, 0)); // End point (along the x-axis)
+xPoints.push(new THREE.Vector3(-100, 0, 0)); // Start point (at origin)
+xPoints.push(new THREE.Vector3(100, 0, 0)); // End point (along the x-axis)
 const xLineMaterial = new THREE.LineBasicMaterial({ color: 0xDB6A6C }); // Line color
 const xLineGeometry = new THREE.BufferGeometry().setFromPoints(xPoints);
 const xLine = new THREE.Line(xLineGeometry, xLineMaterial);
@@ -177,8 +177,8 @@ scene.add(xLine);
 
 // Z-axis line
 const zPoints = [];
-zPoints.push(new THREE.Vector3(0, 0, -10)); // Start point (at origin)
-zPoints.push(new THREE.Vector3(0, 0, 10)); // End point (along the z-axis)
+zPoints.push(new THREE.Vector3(0, 0, -100)); // Start point (at origin)
+zPoints.push(new THREE.Vector3(0, 0, 100)); // End point (along the z-axis)
 const zLineMaterial = new THREE.LineBasicMaterial({ color: 0x658CBB }); // Line color
 const zLineGeometry = new THREE.BufferGeometry().setFromPoints(zPoints);
 const zLine = new THREE.Line(zLineGeometry, zLineMaterial);
