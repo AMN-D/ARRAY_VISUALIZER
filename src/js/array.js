@@ -27,35 +27,41 @@ function createCubes(array) {
             scene.remove(child);
         }
     });    
+    
+    array.forEach((innerArray, outerIndex) => {
+        innerArray.forEach((values, innerIndex)=> {
+            const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+            const cubeMaterial = new THREE.MeshStandardMaterial({ 
+                color: "#d6fd5d",
+                transparent: true,
+                wireframe: true, 
+                // opacity: 0.1 
+            });
+            const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+            // Calculate positions based on outer and inner indices
+            const xPos = innerIndex - (innerArray.length - 1) / 1;
+            const yPos = outerIndex;
+            const zPos = 0;
 
-    array.forEach((value, index) => {
-        const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-        const cubeMaterial = new THREE.MeshStandardMaterial({ 
-            color: "#d6fd5d",
-            transparent: true, 
-            opacity: 0.1 
+            cube.position.set(xPos, yPos, zPos);
+            scene.add(cube);
         });
-        const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-        cube.position.set(index * 1 - array.length, 0, 0);
-        scene.add(cube);
     
-        // Create a sprite for the text
-        const spriteCanvas = document.createElement('canvas');
-        const spriteContext = spriteCanvas.getContext('2d');
-        spriteContext.font = 'Bold 24px Arial';
-        spriteContext.fillStyle = '#ffffff';
-        spriteContext.fillText(value.toString(), 0, 24);
+        // // Create a sprite for the text
+        // const spriteCanvas = document.createElement('canvas');
+        // const spriteContext = spriteCanvas.getContext('2d');
+        // spriteContext.font = 'Bold 24px Arial';
+        // spriteContext.fillStyle = '#ffffff';
+        // spriteContext.fillText(value.toString(), 0, 24);
     
-        const texture = new THREE.CanvasTexture(spriteCanvas);
-        texture.needsUpdate = true;
+        // const texture = new THREE.CanvasTexture(spriteCanvas);
+        // texture.needsUpdate = true;
     
-        const spriteMaterial = new THREE.SpriteMaterial({ map: texture, depthTest: false });
-        const sprite = new THREE.Sprite(spriteMaterial);
-        sprite.position.set(index * 1 - array.length, 0, 0);
-        scene.add(sprite);
+        // const spriteMaterial = new THREE.SpriteMaterial({ map: texture, depthTest: false });
+        // const sprite = new THREE.Sprite(spriteMaterial);
+        // sprite.position.set(index * 1 - array.length, 0, 0);
+        // scene.add(sprite);
     });
-    
-    
 }
 
 // THREE
