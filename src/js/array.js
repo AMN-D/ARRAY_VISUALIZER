@@ -28,24 +28,27 @@ function createCubes(array) {
         }
     });    
     
-    array.forEach((innerArray, outerIndex) => {
-        innerArray.forEach((values, innerIndex)=> {
-            const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-            const cubeMaterial = new THREE.MeshStandardMaterial({ 
-                color: "#d6fd5d",
-                transparent: true,
-                wireframe: true, 
-                // opacity: 0.1 
+    array.forEach((subArray, subIndex) => {
+        subArray.forEach((innerArray, outerIndex) => {
+            innerArray.forEach((values, innerIndex) => {
+                const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+                const cubeMaterial = new THREE.MeshStandardMaterial({ 
+                    color: "#d6fd5d",
+                    transparent: true,
+                    wireframe: true, 
+                    // opacity: 0.1 
+                });
+                const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                // Calculate positions based on outer and inner indices
+                const xPos = innerIndex - (innerArray.length - 1);
+                const yPos = outerIndex; // Adjust yPos based on subIndex
+                const zPos = subIndex; // Adjust zPos based on subIndex
+    
+                cube.position.set(xPos, yPos, zPos);
+                scene.add(cube);
             });
-            const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-            // Calculate positions based on outer and inner indices
-            const xPos = innerIndex - (innerArray.length - 1) / 1;
-            const yPos = outerIndex;
-            const zPos = 0;
-
-            cube.position.set(xPos, yPos, zPos);
-            scene.add(cube);
         });
+    
     
         // // Create a sprite for the text
         // const spriteCanvas = document.createElement('canvas');
