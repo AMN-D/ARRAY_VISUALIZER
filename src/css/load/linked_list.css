@@ -17,18 +17,15 @@ body {
   position: absolute;
   z-index: 999;
   width: 30%;
-  top: 50%;
-  transform: translate(0%, -50%);
-  right: 1rem;
   height: 90%;
   border-radius: 2rem;
   border: grey 2px solid;
   background-color: transparent;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   backdrop-filter: blur(100px);
 }
 @media (max-width: 700px) {
