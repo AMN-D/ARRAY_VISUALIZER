@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARRAY</title>
-    <link rel="stylesheet" href="../css/load/linked_list.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/load/linked_list.css" /> 
+  <title>LINKED LIST</title>
 </head>
 <body>
-  <canvas id="bg"></canvas>
-
-  <div class="main">
-    <div class="aeader">
-      <a id="load-3d-array">
-        <h1>LINKED LIST</h1>
-      </a>
-      <button id="clearall">Clear</button>
-      <input id="insert_field" type="text" />
+  <div id="myContainer">
+    <div id ="myAnimation"></div>
     </div>
-  </div>
-
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://unpkg.com/three/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three/examples/jsm/"
-          }
-        }
-      </script>      
-    <script defer type="module" src="../js/linked_list.js"></script>
+  <button onclick="myMove()">Click Me</button>
+  <script defer src="../js/linked_list.js"></script>
 </body>
 </html>

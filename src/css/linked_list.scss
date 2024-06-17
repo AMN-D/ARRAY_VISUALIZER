@@ -3,7 +3,6 @@
 $primary: #000;
 $secondary: #fff;
 $border: grey 2px solid;
-$border-inside: #121212 2px solid;
 $lemon: #d6fd5d;
 
 body {
@@ -12,32 +11,16 @@ body {
     width: 100vw;
     background-color:$primary;
     font-family: "Poppins", sans-serif;
-}
-
-#bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.main {
-    position: absolute;
-    z-index: 999;
-    width: 30%;
-    height: 90%;
-    border-radius: 2rem;
-    border: $border;
-    background-color: transparent; 
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(100px);
-        @media (max-width: 700px) {
-            width: 80%;
-            height: 40%;
-            left: 50%;
-            transform: translate(-50%, 0%);
-        }
+    #myContainer {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background-color: wheat;
+    }
+    #myAnimation {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: $lemon;
+    }
 }
